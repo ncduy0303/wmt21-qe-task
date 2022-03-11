@@ -1,5 +1,5 @@
 # ------------------------  PyTorch Lightning Configurations --------------------------------------
-seed: 12                                  # Training seed set everywhere
+seed: 42                                  # Training seed set everywhere
 verbose: False                            # Verbosity level
 
 # ----------------------------- Early Stopping ----------------------------------------------------
@@ -44,4 +44,4 @@ dropout: 0.15
 hidden_sizes:
     - 2048
 batch_size: 2
-loss: kl
+loss: varmse
