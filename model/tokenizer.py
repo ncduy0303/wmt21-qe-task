@@ -4,6 +4,7 @@ from transformers import AutoConfig, AutoTokenizer
 
 
 LANGUAGE_MAPPING = {
+    "vi": "vi_VN",
     "en": "en_XX",
     "zh": "zh_CN",
     "de": "de_DE",
