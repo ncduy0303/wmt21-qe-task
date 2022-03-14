@@ -52,7 +52,8 @@ if __name__ == "__main__":
         model.set_mc_dropout(int(args.mc_dropout))
         
     all_scores = []
-    for lp in ["vi-en", 'en-de', 'en-zh', 'ro-en', 'et-en', 'ne-en', 'si-en', "ru-en"]:
+#     for lp in ["vi-en", 'en-de', 'en-zh', 'ro-en', 'et-en', 'ne-en', 'si-en', "ru-en"]:
+    for lp in ["vi-en"]:
         lp_data = [sample for sample in data if sample["lp"] == lp]
         y = [d["score"] for d in lp_data]
 
