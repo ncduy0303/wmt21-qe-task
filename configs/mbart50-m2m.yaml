@@ -24,7 +24,7 @@ max_epochs: 12                            # Max number of epochs
 #limit_val_batches: 200                   # Same as the previous flag but for validation. 
 val_check_interval: 0.5                   # How often within one training epoch to check the validation set. Can specify as float or int.
 
-precision: 32                             # Train with 16 bit precision
+precision: 16                             # Train with 16 bit precision
 # profiler: True                          # To profile individual steps during training and assist in identifying bottlenecks.
 # resume_from_checkpoint: checkpoint.ckpt # To resume training from a specific checkpoint pass in the path here.
 
@@ -35,9 +35,9 @@ train_path: data/bleu.qe.train.csv
 val_path: data/bleu.qe.valid.csv
 
 # -------------------------------- Fine-tuning -----------------------------------------------
-learning_rate: 3.546e-05              # Learning rate to be used during fine-tuning
-encoder_learning_rate: 9.4e-06
-nr_frozen_epochs: 0.25
+learning_rate: 9.71e-06              # Learning rate to be used during fine-tuning
+encoder_learning_rate: 5.74e-06
+nr_frozen_epochs: 0.926
 keep_embeddings_frozen: True
 keep_encoder_frozen: True
 dropout: 0.15
