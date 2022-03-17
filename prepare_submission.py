@@ -41,17 +41,18 @@ def load_checkpoint(checkpoint: str):
     return model
 
 LANGUAGE_PAIRS = [
-    "en-cs",
-    "en-de",
-    "en-ja",
-    "en-zh",
-    "et-en",
-    "km-en",
-    "ne-en",
-    "ps-en",
-    "ro-en",
-    "ru-en",
-    "si-en"
+#     "en-cs",
+#     "en-de",
+#     "en-ja",
+#     "en-zh",
+#     "et-en",
+#     "km-en",
+#     "ne-en",
+#     "ps-en",
+#     "ro-en",
+#     "ru-en",
+#     "si-en",
+    "vi-en"
 ]
 
 if __name__ == "__main__":  
@@ -64,7 +65,7 @@ if __name__ == "__main__":
         "--seed_everything",
         help="Prediction seed.",
         type=int,
-        default=12,
+        default=42,
     )
     args = parser.parse_args()
     seed_everything(args.seed_everything)
