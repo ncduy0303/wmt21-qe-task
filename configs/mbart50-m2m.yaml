@@ -5,7 +5,7 @@ verbose: False                            # Verbosity level
 # ----------------------------- Early Stopping ----------------------------------------------------
 monitor: pearson                          # Metric to monitor during training
 min_delta: 0.0                            # Sensitivity to the metric.
-patience: 0                               # Number of epochs without improvement before stopping training    
+patience: 12                              # Number of epochs without improvement before stopping training    
 metric_mode: max                          # 'min' or 'max' depending if we wish to maximize or minimize the metric
 
 # ----------------------------- Model Checkpoint --------------------------------------------------
