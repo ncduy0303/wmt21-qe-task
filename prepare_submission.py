@@ -78,7 +78,7 @@ if __name__ == "__main__":
     disk_footprint = os.path.getsize(args.checkpoint)
 
     output = str(disk_footprint)+"\n"+str(model_parameters)+"\n"
-    data = pd.read_csv("data/test21/glass-box.test21.csv")
+    data = pd.read_csv("data/bleu.qe.test.csv")
 
     lps = LANGUAGE_PAIRS if args.lp == "all" else [args.lp]
     for lp in lps:
@@ -88,7 +88,7 @@ if __name__ == "__main__":
         
         df = data[data.lp == lp]
         lp_data = df.to_dict("records")
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
         _, y_hat = model.predict(lp_data, show_progress=True, cuda=True, batch_size=16)
         if isinstance(y_hat[0], list):
             y_hat = [s[0] for s in y_hat]
@@ -101,14 +101,3 @@ if __name__ == "__main__":
 
     with open("predictions.txt", "w") as text_file:
         text_file.write(output)
-        
-    zipObj = ZipFile("predictions.txt.zip", 'w')
-    zipObj.write("predictions.txt")
-    zipObj.close()
-
-    if os.path.isfile("/".join(model_path)+"/predictions.txt"):
-        os.remove("/".join(model_path)+"/predictions.txt")
-    if os.path.isfile("/".join(model_path)+"/predictions.txt.zip"):
-        os.remove("/".join(model_path)+"/predictions.txt.zip")
-    shutil.move("predictions.txt", "/".join(model_path))
-    shutil.move("predictions.txt.zip", "/".join(model_path))
